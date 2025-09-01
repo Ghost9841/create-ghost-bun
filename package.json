@@ -1,6 +1,6 @@
 {
   "name": "@technest/create-ghost-bun",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom Bun + TypeScript boilerplate generator by Ghost Aakash",
   "type": "module",
   "module": "index.ts",
