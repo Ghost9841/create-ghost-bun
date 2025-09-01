@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-
-const { execSync } = require("child_process");
+import { execSync } from "child_process";
+import process from "process";
 
 const runCommand = (command) => {
   try {
@@ -14,7 +14,7 @@ const runCommand = (command) => {
 
 const repoName = process.argv[2];
 if (!repoName) {
-  console.error("❌ Please provide a project name. Example: npx create-ghost-bun my-app");
+  console.error("❌ Please provide a project name. Example: npx @technest/create-ghost-bun my-app");
   process.exit(1);
 }
 
@@ -22,12 +22,10 @@ const gitCheckoutCommand = `git clone --depth 1 https://github.com/Ghost9841/cre
 const installDepsCommand = `cd ${repoName} && bun install`;
 
 console.log(`📂 Cloning the repo into "${repoName}"...`);
-const checkedOut = runCommand(gitCheckoutCommand);
-if (!checkedOut) process.exit(-1);
+if (!runCommand(gitCheckoutCommand)) process.exit(-1);
 
 console.log(`📦 Installing dependencies in "${repoName}"...`);
-const installed = runCommand(installDepsCommand);
-if (!installed) process.exit(-1);
+if (!runCommand(installDepsCommand)) process.exit(-1);
 
 console.log("🚀 All done! Get started with:");
 console.log(`cd ${repoName} && bun run dev`);
