@@ -27,5 +27,18 @@ if (!runCommand(gitCheckoutCommand)) process.exit(-1);
 console.log(`📦 Installing dependencies in "${repoName}"...`);
 if (!runCommand(installDepsCommand)) process.exit(-1);
 
-console.log("🚀 All done! Get started with:");
-console.log(`cd ${repoName} && bun run dev`);
+console.log(" All done! Here's how to get started:\n");
+
+console.log("📂 Frontend:");
+console.log(`  cd ${repoName}/packages/client && bun run dev`);
+console.log("  (This will start the frontend)\n");
+
+console.log("📂 Backend:");
+console.log(`  cd ${repoName}/packages/server && bun run dev`);
+console.log("  (This will start the backend)\n");
+
+console.log("🌐 Both together:");
+console.log(`  cd ${repoName} && bun run dev`);
+console.log("  (This will start both frontend and backend at once)\n");
+
+console.log("🚀 Enjoy your development!");
