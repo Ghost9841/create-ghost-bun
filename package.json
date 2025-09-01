@@ -2,10 +2,16 @@
   "name": "create-ghost-bun",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun run index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1"
   }
 }
