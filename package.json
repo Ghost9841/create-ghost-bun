@@ -1,17 +1,30 @@
 {
-  "name": "create-ghost-bun",
-  "module": "index.ts",
+  "name": "@technest/create-ghost-bun",
+  "version": "1.0.0",
+  "description": "Custom Bun + TypeScript boilerplate generator by Ghost Aakash",
   "type": "module",
+  "module": "index.ts",
+  "main": "bin/cli.js",
+  "bin": {
+    "create-ghost-bun": "./bin/cli.js"
+  },
   "scripts": {
-    "dev": "bun run index.ts"
+    "dev": "bun run index.ts",
+    "build": "bun build index.ts --outdir bin"
   },
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
+  "keywords": [
+    "bun",
+    "boilerplate",
+    "typescript",
+    "cli"
+  ],
+  "author": "Ghost Aakash <asubedi778@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "concurrently": "^9.2.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
   }
 }
